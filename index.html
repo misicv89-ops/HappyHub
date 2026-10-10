@@ -2,10 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Happy Hub Igraonica Niš – rođendani i igraonica za decu</title>
-<meta name="description" content="Happy Hub igraonica i rođendaonica u Nišu, Vojvode Tankosića 14. Rođendanski paketi, radionice, maskote i crtanje po licu. Pozovite 065 324 4780.">
-<link rel="icon" href="assets/logo-ikona.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Hub Igraonica Niš – rođendani van ovog sveta</title>
+<meta name="description" content="Ceo prostor samo za vaše društvo, animatori, maskote i kafić sa pogledom na decu. Vojvode Tankosića 14, Niš.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:site_name" content="Happy Hub Igraonica">
+<meta property="og:title" content="Happy Hub Igraonica Niš – rođendani van ovog sveta">
+<meta property="og:description" content="Ceo prostor samo za vaše društvo, animatori, maskote i kafić sa pogledom na decu. Vojvode Tankosića 14, Niš.">
+<meta property="og:url" content="https://KORISNIK.github.io/happyhub/">
+<meta property="og:image" content="https://KORISNIK.github.io/happyhub/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Slavljenik duva svećice na rođendanu u Happy Hub igraonici">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Happy Hub Igraonica Niš – rođendani van ovog sveta">
+<meta name="twitter:description" content="Ceo prostor samo za vaše društvo, animatori, maskote i kafić sa pogledom na decu. Vojvode Tankosića 14, Niš.">
+<meta name="twitter:image" content="https://KORISNIK.github.io/happyhub/assets/og-image.jpg">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -90,6 +103,7 @@ input,select,textarea{font-family:inherit}
 [data-rod] img{min-height:220px !important;max-height:260px !important}
 [data-rod-text]{align-items:center;text-align:center;padding:0 4px 8px !important}
 }
+@media(max-width:700px){[data-calc]{box-shadow:0 8px 0 #f5c542 !important}[data-calc-text]{text-align:center;align-items:center}}
 [data-hh="burger"]{display:none}
 @media(max-width:900px){[data-hh="burger"]{display:flex}}
 @media(max-width:540px){header [data-cta]{display:none}}
@@ -160,7 +174,7 @@ input,select,textarea{font-family:inherit}
   </div>
   <div style="position:relative;z-index:1">
     <div style="position:absolute;inset:-18px 18px 18px -18px;border-radius:36px;background:#f5c542"></div>
-    <img src="assets/izlog.webp" alt="Izlog igraonice Happy Hub" style="position:relative;display:block;width:100%;aspect-ratio:4/4.4;object-fit:cover;border-radius:36px">
+    <img src="assets/rodjendan-torta-4.webp" alt="Slavljenica duva svećicu na rođendanskoj torti u Happy Hub igraonici" fetchpriority="high" style="position:relative;display:block;width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:center 62%;border-radius:36px">
     <div style="position:absolute;right:-10px;bottom:28px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 14px 40px rgba(28,33,64,.18);display:flex;gap:12px;align-items:center">
       <div style="position:relative;width:38px;height:38px;border-radius:50%;background:#f5c542;overflow:hidden;flex-shrink:0"><div style="position:absolute;top:-6px;left:12px;width:34px;height:34px;border-radius:50%;background:#fff"></div></div>
       <div style="line-height:1.25"><div style="font-weight:800;font-size:15px">Vikend termini se brzo pune</div><div style="font-size:13px;color:#6a7090">Rezerviši 2 do 3 nedelje unapred</div></div>
@@ -236,6 +250,36 @@ input,select,textarea{font-family:inherit}
       </div>
     </sc-for>
   </div>
+  <div data-calc="" style="max-width:860px;margin:44px auto 0;background:#1c2140;color:#fff;border-radius:32px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,4vw,40px);align-items:center;box-shadow:10px 10px 0 #f5c542">
+    <div data-calc-text="" style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-weight:800;letter-spacing:.14em;font-size:13px;color:#f5c542">KALKULATOR</div>
+      <h3 style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);line-height:1.1;margin:0">Okvirna cena proslave</h3>
+      <p style="margin:0;line-height:1.6;color:#c9cde4;font-size:16px;text-wrap:pretty">Izračun važi samo za paket (cena × broj dece, od 10 do 20 dece). Torta i dodaci nisu uključeni. Konačnu cenu potvrđujemo pri rezervaciji.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <div style="font-weight:800;letter-spacing:.12em;font-size:13px;color:#c9cde4">PAKET</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:-8px">
+        <sc-for list="{{ calcOpts }}" as="c" hint-placeholder-count="2">
+          <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.pressed }}" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 12px;border-radius:999px;border:2px solid {{ c.border }};background:{{ c.bg }};color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:18px;cursor:pointer;white-space:nowrap">
+            <span style="width:18px;height:18px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="width:8px;height:8px;border-radius:50%;background:{{ c.dot }}"></span></span>{{ c.label }}
+          </button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+        <div style="font-weight:800;font-size:17px">Broj dece</div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <button type="button" onClick="{{ calcDec }}" aria-label="Manje dece" style="width:48px;height:48px;border-radius:50%;border:2px solid #f5c542;background:none;color:#f5c542;font-size:24px;font-weight:800;cursor:pointer;line-height:1">−</button>
+          <input type="number" min="10" max="20" value="{{ calcKids }}" onChange="{{ calcSet }}" aria-label="Broj dece" style="width:72px;height:48px;border-radius:14px;border:2px solid rgba(255,255,255,.2);background:#2a376f;color:#fff;text-align:center;font-family:'Fredoka',sans-serif;font-weight:600;font-size:22px;outline:none">
+          <button type="button" onClick="{{ calcInc }}" aria-label="Više dece" style="width:48px;height:48px;border-radius:50%;border:2px solid #f5c542;background:none;color:#f5c542;font-size:24px;font-weight:800;cursor:pointer;line-height:1">+</button>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div style="color:#c9cde4;font-size:17px;font-weight:700">Procena:</div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:clamp(40px,6vw,60px);line-height:1.05;color:#f5c542">{{ calcTotal }}</div>
+      </div>
+      <button type="button" onClick="{{ calcBook }}" style="border:none;cursor:pointer;background:#f5c542;color:#1c2140;padding:16px;border-radius:999px;font-weight:800;font-size:16px;letter-spacing:.04em;font-family:inherit;box-shadow:0 5px 0 #d6a51f">REZERVIŠI SA OVIM IZBOROM</button>
+    </div>
+  </div>
 </section>
 
 <!-- RADIONICE -->
@@ -306,7 +350,7 @@ input,select,textarea{font-family:inherit}
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)">
           <div style="font-weight:700;color:#c9cde4">Cena</div>
-          <div style="font-weight:800;font-size:17px">250 RSD</div>
+          <div style="font-weight:800;font-size:17px;text-align:right">250 RSD po detetu, po satu</div>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:20px;flex-wrap:wrap">
           <div style="font-weight:700;color:#c9cde4">Šta je uključeno</div>
@@ -513,6 +557,7 @@ class Component extends DCLogic {
       raf = 0;
       if (rm.matches) { els.forEach(el => el.style.setProperty('--p', 0)); return; }
       els.forEach((el, i) => {
+        if (!el.hasAttribute('data-stack')) return;
         const n = els[i + 1]; let p = 0;
         if (n) {
           const stuckBottom = tops[i] + el.offsetHeight, dist = Math.max(1, stuckBottom - hh);
@@ -524,7 +569,11 @@ class Component extends DCLogic {
     const layout = () => {
       const vh = window.innerHeight; hh = window.innerWidth <= 700 ? 0 : ((document.querySelector('header') || {}).offsetHeight || 0);
       tops = els.map(el => Math.min(hh, vh - el.offsetHeight));
-      els.forEach((el, i) => { el.style.top = tops[i] + 'px'; });
+      els.forEach((el, i) => {
+        const tall = el.offsetHeight > vh - hh - 8 || vh < 600;
+        if (tall) { el.removeAttribute('data-stack'); el.style.top = ''; el.style.setProperty('--p', 0); }
+        else { el.setAttribute('data-stack', ''); el.style.top = tops[i] + 'px'; }
+      });
       tick();
     };
     this.stackScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
@@ -545,8 +594,8 @@ class Component extends DCLogic {
     const w = typeof window !== 'undefined' ? window.innerWidth : this.state.w;
     const pick = name => () => { this.setState(s => ({ form: { ...s.form, pkg: name } })); const el = document.getElementById('rezervacija'); if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' }); };
     const raw = [
-      { name: 'Paket sa kiflicama', price: '700 RSD po detetu', sub: 'Lagano posluženje za decu i roditelje', items: ['Ekskluzivan prostor za proslavu', 'Slane kiflice za decu', 'Sokovi za decu', 'Igra uz animatora', 'Kutak za roditelje'] },
-      { name: 'Paket sa picom', price: '800 RSD po detetu', sub: 'Najtraženiji izbor za pravu žurku', featured: true, items: ['Ekskluzivan prostor za proslavu', 'Pica za decu', 'Sokovi za decu', 'Igra uz animatora', 'Kutak za roditelje'] }
+      { name: 'Paket sa kiflicama', price: '700 RSD po detetu', sub: 'Lagano posluženje za decu', items: ['Trajanje: 1h 30min', 'Od 10 do 20 dece', 'Ekskluzivan prostor za proslavu', 'Slane kiflice za decu', 'Sokovi za decu', 'Igra uz animatora', 'Kutak za roditelje'] },
+      { name: 'Paket sa picom', price: '800 RSD po detetu', sub: 'Najtraženiji izbor za pravu žurku', featured: true, items: ['Trajanje: 1h 30min', 'Od 10 do 20 dece', 'Ekskluzivan prostor za proslavu', 'Pica za decu', 'Sokovi za decu', 'Igra uz animatora', 'Kutak za roditelje'] }
     ];
     const packages = raw.map(p => {
       const f = !!p.featured;
@@ -559,7 +608,13 @@ class Component extends DCLogic {
       ['Da li roditelji mogu da ostanu?', 'Naravno imamo kutak za roditelje gde možete opušteno popiti kafu dok se deca igraju.'],
       ['Mogu li da donesem svoju tortu i hranu?', 'Da, svoju tortu i posluženje možete doneti, ili ih poručiti preko nas uz paket.'],
       ['Koliko unapred treba rezervisati?', 'Za vikend termine preporučujemo 2 do 3 nedelje unapred. Radnim danima je često moguće i ranije.'],
-      ['Da li je potrebna kapara?', 'Termin se potvrđuje uplatom kapare. Detalje dobijate pri potvrdi rezervacije.']
+      ['Koliko traje rođendan?', 'Rođendan traje 1h 30min. Prostor je za to vreme samo za vaše društvo.'],
+      ['Koliko dece može da dođe?', 'Paketi su za najmanje 10, a najviše 20 dece.'],
+      ['Koliki je iznos kapare i kako se uplaćuje?', 'Termin se potvrđuje uplatom kapare od [UNETI] RSD. Kaparu možete platiti u igraonici ili uplatom na račun, a detalje dobijate pri potvrdi rezervacije.'],
+      ['Šta ako dete bude bolesno? Da li mogu da pomerim termin?', 'Javite nam se što pre. Ako otkažete najkasnije [UNETI] dana pre proslave, termin pomeramo bez gubitka kapare.'],
+      ['Da li deca treba da imaju čarape?', 'Da, iz higijenskih razloga u igraonici se boravi u čarapama. Obuću ostavljate na ulazu, a za roditelje važi isto pravilo u prostoru za igru.'],
+      ['Da li ima parkinga u blizini?', '[UNETI: npr. parking ispred objekta / javni parking u ulici].'],
+      ['Da li vodite računa o alergijama i ishrani?', 'Da. Pri rezervaciji nam recite ako neko dete ima alergiju ili posebnu ishranu, pa ćemo prilagoditi posluženje ili vam preporučiti da ponesete svoje.']
     ];
     const h = React.createElement;
     const star = (t, l, s, d, c) => h('div', { key: t + l, style: { position: 'absolute', top: t, left: l, width: s, height: s, borderRadius: '50%', background: c, animation: `hhTwinkle 2.4s ease-in-out ${d}s infinite` } });
@@ -596,7 +651,17 @@ class Component extends DCLogic {
       star(20, 400, 12, 0, '#f5c542'), star(380, 30, 9, .8, '#34428a'), star(90, 20, 7, 1.6, '#e24b3b'), star(420, 360, 8, 1.1, '#f5c542'));
     const prog = this.state.prog || 0, down = this.state.down !== false;
     const showTop = (typeof window !== 'undefined' ? window.scrollY : 0) > window.innerHeight * 0.6;
+    const cPkg = this.state.calcPkg || 'Paket sa picom', cKids = this.state.calcKids ?? 10;
+    const cPrice = cPkg === 'Paket sa kiflicama' ? 700 : 800;
+    const clampK = v => Math.max(10, Math.min(20, Math.round(+v || 10)));
     return {
+      calcOpts: [['Paket sa kiflicama', 'Kiflice · 700'], ['Paket sa picom', 'Pica · 800']].map(([n, l]) => { const on = cPkg === n; return { label: l, pressed: on ? 'true' : 'false', border: on ? '#f5c542' : 'rgba(255,255,255,.22)', bg: on ? '#2a376f' : 'transparent', dot: on ? '#e24b3b' : '#fff', pick: () => this.setState({ calcPkg: n }) }; }),
+      calcKids: cKids,
+      calcTotal: (cPrice * cKids).toLocaleString('de-DE') + ' RSD',
+      calcDec: () => this.setState({ calcKids: clampK(cKids - 1) }),
+      calcInc: () => this.setState({ calcKids: clampK(cKids + 1) }),
+      calcSet: e => { const v = e.target.value; this.setState({ calcKids: v === '' ? 10 : clampK(v) }); },
+      calcBook: () => { this.setState(s => ({ form: { ...s.form, pkg: cPkg, kids: String(cKids) } })); const el = document.getElementById('rezervacija'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' }); },
       menuOpen: !!this.state.menuOpen,
       openMenu: () => { this.setState({ menuOpen: true }); document.body.style.overflow = 'hidden'; },
       closeMenu: () => { this.setState({ menuOpen: false }); document.body.style.overflow = ''; },
